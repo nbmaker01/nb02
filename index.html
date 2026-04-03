@@ -13,9 +13,10 @@
     <!-- ========================= -->
     <!-- 카메라 + 이동 설정 -->
     <!-- ========================= -->
+    <!-- 카메라를 더 뒤로 이동해서 큰 모델이 잘 보이게 함 -->
     <a-entity id="cameraRig">
       <a-camera 
-        position="0 1.6 5" 
+        position="0 1.6 20" 
         wasd-controls 
         look-controls>
       </a-camera>
@@ -41,8 +42,8 @@
     <!-- ========================= -->
     <a-plane 
       rotation="-90 0 0" 
-      width="50" 
-      height="50" 
+      width="200" 
+      height="200" 
       color="#7BC8A4">
     </a-plane>
 
@@ -54,21 +55,25 @@
     <!-- ========================= -->
     <!-- 조명 -->
     <!-- ========================= -->
-    <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+    <a-light type="ambient" color="#ffffff" intensity="0.7"></a-light>
 
     <a-light 
       type="directional" 
-      position="5 10 7" 
-      intensity="1">
+      position="10 20 10" 
+      intensity="1.2">
     </a-light>
 
     <!-- ========================= -->
-    <!-- GLB 3D 모델 (10배 크게 수정) -->
+    <!-- GLB 3D 모델 (훨씬 더 크게 확대) -->
     <!-- ========================= -->
+    <!--
+      scale을 매우 크게 설정 (모델이 작은 경우 대응)
+      카메라도 뒤로 이동해서 전체가 보이게 조정
+    -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -5"
-      scale="20 20 20"  <!-- 기존 2 → 20으로 10배 확대 -->
+      position="0 0 -10"
+      scale="100 100 100"
       rotation="0 30 0">
     </a-entity>
 
