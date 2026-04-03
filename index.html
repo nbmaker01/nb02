@@ -13,10 +13,6 @@
     <!-- ========================= -->
     <!-- 카메라 + 이동 설정 -->
     <!-- ========================= -->
-    <!--
-      wasd-controls: 키보드(WASD) 이동
-      look-controls: 마우스 시점 이동
-    -->
     <a-entity id="cameraRig">
       <a-camera 
         position="0 1.6 5" 
@@ -28,14 +24,12 @@
     <!-- ========================= -->
     <!-- VR 컨트롤러 설정 -->
     <!-- ========================= -->
-    <!-- 왼손 컨트롤러 -->
     <a-entity 
       laser-controls="hand: left"
       raycaster="objects: .clickable"
       line="color: red">
     </a-entity>
 
-    <!-- 오른손 컨트롤러 -->
     <a-entity 
       laser-controls="hand: right"
       raycaster="objects: .clickable"
@@ -43,7 +37,7 @@
     </a-entity>
 
     <!-- ========================= -->
-    <!-- 바닥 (Plane) -->
+    <!-- 바닥 -->
     <!-- ========================= -->
     <a-plane 
       rotation="-90 0 0" 
@@ -53,17 +47,15 @@
     </a-plane>
 
     <!-- ========================= -->
-    <!-- 하늘 (Sky) -->
+    <!-- 하늘 -->
     <!-- ========================= -->
     <a-sky color="#ECECEC"></a-sky>
 
     <!-- ========================= -->
-    <!-- 조명 설정 -->
+    <!-- 조명 -->
     <!-- ========================= -->
-    <!-- 주변광 -->
     <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
 
-    <!-- 방향광 -->
     <a-light 
       type="directional" 
       position="5 10 7" 
@@ -71,21 +63,15 @@
     </a-light>
 
     <!-- ========================= -->
-    <!-- GLB 3D 모델 -->
+    <!-- GLB 3D 모델 (10배 크게 수정) -->
     <!-- ========================= -->
-    <!--
-      position: 앞쪽 중앙
-      scale: 크게 보이도록 조정
-      rotation: 약간 회전
-    -->
     <a-entity 
       gltf-model="model.glb"
-      position="0 0 -3"
-      scale="2 2 2"
+      position="0 0 -5"
+      scale="20 20 20"  <!-- 기존 2 → 20으로 10배 확대 -->
       rotation="0 30 0">
     </a-entity>
 
   </a-scene>
 </body>
-</html>/
-/
+</html>
